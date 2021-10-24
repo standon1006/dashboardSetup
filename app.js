@@ -1,6 +1,6 @@
 var datas = d3.csv("data.csv", function(data) {
-				console.log(data);
-			});
+				
+			
 
 const area = document.querySelector("#bar")
 const body = document.querySelector('body')
@@ -251,3 +251,4 @@ function drawPieChart(){
             .attr('y', function(d,i){ return 5 + (i * 20) })
             .text(function(d,i){ return d.title })
 }
+	});
