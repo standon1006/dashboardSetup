@@ -1,3 +1,8 @@
+var datanew = d3.csv("data.csv", function(data) {
+				console.log(data);
+			});
+
+
 const datas = [
     { language : "A", value : 47 },
     { language : "B", value : 81 },
