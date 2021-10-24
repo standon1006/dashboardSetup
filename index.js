@@ -1,4 +1,4 @@
-d3.csv("data.csv").then(function(data) {
+var datas = d3.csv("data.csv").then(function(data) {
 
   // Format
   data.forEach(function(d) {
