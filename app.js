@@ -107,8 +107,8 @@ function drawBarChart(){
         .append('rect')
         .attr('class','bar')
         .attr('x', (d) => xScale(d.wk))
-        .attr('y', (d) => yScale(d.value))
-        .attr('height', (d) => height - yScale(d.value))
+        .attr('y', (d) => yScale(+d.value))
+        .attr('height', (d) => height - yScale(+d.value))
         .attr('width', xScale.bandwidth())
         .on('mouseenter', function(){
             d3.select(this).attr('class','hover-bar')
