@@ -1,6 +1,4 @@
-var datanew = d3.csv("data.csv", function(data) {
-				console.log(data);
-			});
+
 
 
 const datas = [
@@ -33,6 +31,13 @@ body.onresize = function(){
         drawPieChart()
     }
 }
+
+d3.csv("data.csv",.then(function(data) {
+      // Format
+  data.forEach(function(d) {
+    d.value = +d.value;}
+			});
+	
 drawBarChart()
 function drawBarChart(){
 
@@ -45,6 +50,8 @@ function drawBarChart(){
     .attr('id','svg-bar')
     const chart = svg.append('g')
     .attr('transform',`translate(${margin.x},${margin.y})`)
+    
+
 
     const yScale = d3.scaleLinear()
     .range([height,0])
@@ -56,7 +63,7 @@ function drawBarChart(){
 
     const xScale = d3.scaleBand()
     .range([0, width])
-    .domain(datas.map((d) => d.language))
+    .domain(data.map(function(d) { return d.wk; }))
     .padding(0.2)
 
     chart.append('g')
@@ -102,11 +109,11 @@ function drawBarChart(){
 
 
     chart.selectAll()
-    .data(datas)
+    .data(data)
     .enter()
         .append('rect')
         .attr('class','bar')
-        .attr('x', (d) => xScale(d.language))
+        .attr('x', (d) => xScale(d.wk))
         .attr('y', (d) => yScale(d.value))
         .attr('height', (d) => height - yScale(d.value))
         .attr('width', xScale.bandwidth())
@@ -263,3 +270,4 @@ function drawPieChart(){
             .attr('y', function(d,i){ return 5 + (i * 20) })
             .text(function(d,i){ return d.title })
 }
+})
