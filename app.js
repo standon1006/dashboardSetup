@@ -1,3 +1,6 @@
+var datanew = d3.csv("data.csv", function(data) {
+				console.log(data);
+			});
 
 
 const datas = [
