@@ -1,19 +1,7 @@
-var datanew = d3.csv("data.csv", function(data) {
+var datas = d3.csv("data.csv", function(data) {
 				console.log(data);
 			});
 
-
-const datas = [
-    { language : "A", value : 47 },
-    { language : "B", value : 81 },
-    { language : "C", value : 33 },
-    { language : "D", value : 54.21 },
-    { language : "E", value : 41.78 },
-    { language : "F", value : 41.78 },
-    { language : "G", value : 41.78 },
-    { language : "H", value : 41.78 },
-    { language : "I", value : 41.78 },
-]
 const area = document.querySelector("#bar")
 const body = document.querySelector('body')
 body.onresize = function(){
@@ -56,7 +44,7 @@ function drawBarChart(){
 
     const xScale = d3.scaleBand()
     .range([0, width])
-    .domain(datas.map((d) => d.language))
+    .domain(datas.map((d) => d.wk))
     .padding(0.2)
 
     chart.append('g')
@@ -106,7 +94,7 @@ function drawBarChart(){
     .enter()
         .append('rect')
         .attr('class','bar')
-        .attr('x', (d) => xScale(d.language))
+        .attr('x', (d) => xScale(d.wk))
         .attr('y', (d) => yScale(d.value))
         .attr('height', (d) => height - yScale(d.value))
         .attr('width', xScale.bandwidth())
