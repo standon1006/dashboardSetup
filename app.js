@@ -261,4 +261,4 @@ function drawPieChart(){
             .attr('y', function(d,i){ return 5 + (i * 20) })
             .text(function(d,i){ return d.title })
 }
-	});
+	
