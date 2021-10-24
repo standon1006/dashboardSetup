@@ -1,19 +1,21 @@
-var datas = d3.csv("data.csv", function(d) {
-  return {
-    yr : d.yr,
-    wk : d.wk,
-    lob : d.lob,
-	  region : d.region,
-	  segment : d.segment,
-    value : +d.value
-  };
-	.then(function(data) {
-  console.log(data[0]);
-});
-				
+var datanew = d3.csv("data.csv", function(data) {
+				console.log(data);
+			});
+
+
+const datas = [
+    { language : "A", value : 47 },
+    { language : "B", value : 81 },
+    { language : "C", value : 33 },
+    { language : "D", value : 54.21 },
+    { language : "E", value : 41.78 },
+    { language : "F", value : 41.78 },
+    { language : "G", value : 41.78 },
+    { language : "H", value : 41.78 },
+    { language : "I", value : 41.78 },
+]
 const area = document.querySelector("#bar")
 const body = document.querySelector('body')
-
 body.onresize = function(){
     const barSVG = document.querySelector("#svg-bar")
     if(barSVG != null){
@@ -54,7 +56,7 @@ function drawBarChart(){
 
     const xScale = d3.scaleBand()
     .range([0, width])
-    .domain(datas.map((d) => d.wk))
+    .domain(datas.map((d) => d.language))
     .padding(0.2)
 
     chart.append('g')
@@ -104,7 +106,7 @@ function drawBarChart(){
     .enter()
         .append('rect')
         .attr('class','bar')
-        .attr('x', (d) => xScale(d.wk))
+        .attr('x', (d) => xScale(d.language))
         .attr('y', (d) => yScale(d.value))
         .attr('height', (d) => height - yScale(d.value))
         .attr('width', xScale.bandwidth())
@@ -261,4 +263,3 @@ function drawPieChart(){
             .attr('y', function(d,i){ return 5 + (i * 20) })
             .text(function(d,i){ return d.title })
 }
-	
