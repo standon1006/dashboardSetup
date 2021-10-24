@@ -1,9 +1,19 @@
-d3.csv("data.csv", function(data) {
+var datas = d3.csv("data.csv", function(d) {
+  return {
+    yr : d.yr,
+    wk : d.wk,
+    lob : d.lob,
+	  region : d.region,
+	  segment : d.segment,
+    value : +d.value
+  };
+	.then(function(data) {
+  console.log(data[0]);
+});
 				
-			
-
 const area = document.querySelector("#bar")
 const body = document.querySelector('body')
+
 body.onresize = function(){
     const barSVG = document.querySelector("#svg-bar")
     if(barSVG != null){
