@@ -1,4 +1,4 @@
-var datas = d3.csv("data.csv", function(data) {
+d3.csv("data.csv", function(data) {
 				
 			
 
