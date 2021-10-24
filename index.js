@@ -1,3 +1,6 @@
-var datanew = d3.csv("data.csv", function(data) {
-				console.log(data);
-			});
+d3.csv("data.csv").then(function(data) {
+
+  // Format
+  data.forEach(function(d) {
+    d.value = +d.value;
+  });
