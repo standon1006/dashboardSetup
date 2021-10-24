@@ -56,7 +56,7 @@ function drawBarChart(){
 
     const xScale = d3.scaleBand()
     .range([0, width])
-    .domain(datas.map((d) => d.language))
+    .domain(datas.map((d) => d.wk))
     .padding(0.2)
 
     chart.append('g')
@@ -102,11 +102,11 @@ function drawBarChart(){
 
 
     chart.selectAll()
-    .data(datas)
+    .data(datanew)
     .enter()
         .append('rect')
         .attr('class','bar')
-        .attr('x', (d) => xScale(d.language))
+        .attr('x', (d) => xScale(d.wk))
         .attr('y', (d) => yScale(d.value))
         .attr('height', (d) => height - yScale(d.value))
         .attr('width', xScale.bandwidth())
@@ -142,7 +142,7 @@ function drawLineChart(){
 
     const xScale = d3.scaleBand()
     .range([0, width])
-    .domain(datas.map((d) => d.language))
+    .domain(datas.map((d) => d.yr))
     .padding(0.2)
 
     chart.append('g')
@@ -184,12 +184,12 @@ function drawLineChart(){
     //End y Axis Title
 
     const line = d3.line()
-    .x(function(d,i){ return xScale(d.language) })
+    .x(function(d,i){ return xScale(d.yr) })
     .y(function(d,i){ return yScale(d.value) })
     .curve(d3.curveMonotoneX)
 
     chart.append('path')
-    .datum(datas)
+    .datum(datanew)
     .attr('class','line')
     .attr('d',line)
 
@@ -198,15 +198,15 @@ drawPieChart()
 function drawPieChart(){
     const good_datas = []
     let total = 0
-    for(let i = 0; i < datas.length; i++){
-        total = +datas[i].value + +total
+    for(let i = 0; i < datanew.length; i++){
+        total = +datanew[i].value + +total
     }
-    for(let i = 0; i < datas.length; i++){
+    for(let i = 0; i < datanew.length; i++){
         good_datas.push(
             {
-                value : datas[i].value/total, 
+                value : datanew[i].value/total, 
                 color : "#AA" + Math.ceil(Math.random() * 10000),
-                title : datas[i].language
+                title : datanew[i].language
             })
     }
 
