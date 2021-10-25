@@ -75,7 +75,7 @@ function drawBarChart(){
     .attr('y', margin.y / 2)
     .attr('class','title')
     .attr('text-anchor','middle')
-    .text('Bar chart')
+    .text('Performance Thoughout the Year')
     //End Top Title
 
     //x Axis Title
@@ -84,7 +84,7 @@ function drawBarChart(){
     .attr('y', (margin.y * 2))
     .attr('transform',`translate(0,${height - (margin.y / 4) })`)
     .attr('class','title')
-    .text('x axis title')
+    .text('Years')
     //End x axis title
 
     //y Axis Title
@@ -93,7 +93,7 @@ function drawBarChart(){
     .attr('x',-(height/2) - margin.y)
     .attr('y', margin.x / 2.4)
     .attr('transform', 'rotate(-90)')
-    .text('y axis title')
+    .text('Values')
     //End y Axis Title
 
 
@@ -158,7 +158,7 @@ function drawLineChart(){
     .attr('y', margin.y / 2)
     .attr('class','title')
     .attr('text-anchor','middle')
-    .text('Line chart')
+    .text('Performance by Weeks')
     //End Top Title
 
     //x Axis Title
@@ -167,7 +167,7 @@ function drawLineChart(){
     .attr('y', (margin.y * 2))
     .attr('transform',`translate(0,${height - (margin.y / 4) })`)
     .attr('class','title')
-    .text('x axis title')
+    .text('Weeks')
     //End x axis title
 
     //y Axis Title
@@ -176,7 +176,7 @@ function drawLineChart(){
     .attr('x',-(height/2) - margin.y)
     .attr('y', margin.x / 2.4)
     .attr('transform', 'rotate(-90)')
-    .text('y axis title')
+    .text('Values')
     //End y Axis Title
 
     const line = d3.line()
@@ -202,7 +202,7 @@ function drawPieChart(){
             {
                 value : datas[i].value/total, 
                 color : "#AA" + Math.ceil(Math.random() * 10000),
-                title : datas[i].language
+                title : datas[i].segment
             })
     }
 
@@ -225,7 +225,7 @@ function drawPieChart(){
     .attr('y', margin.y / 2)
     .attr('class','title')
     .attr('text-anchor','middle')
-    .text('Pie chart')
+    .text('Distribution by Segment')
     //End Top Title
 
     const radius = (width < height) ? width / 2 : height / 2;
