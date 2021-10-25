@@ -113,20 +113,20 @@ function drawBarChart(){
             d3.select(this).attr('class','bar')
         })
     
-    chart.selectAll("text")
+    chart.selectAll()
     .data(datas)
     .enter()
         .append("text")
         .text(function(d) {
-            return d.value;
+            return d.value
         })
         .attr("y", function(d, i) {
-            return height - yScale(d.value) - 2;
+            return height - yScale(d.value) - 2
         })
         .attr("x", function(d, i) {
-            return xScale.bandwidth() * i;
+            return xScale.bandwidth() * i
         })
-        .attr("fill", "#A64C38");
+        .attr("fill", "#A64C38")
 
 }
 
