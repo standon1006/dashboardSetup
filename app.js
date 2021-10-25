@@ -190,18 +190,32 @@ function drawLineChart(){
 
 }
 drawPieChart()
+
+
+ const datanew2 = d3.nest()
+                  .key(function(d) { return d.Region})
+                  .rollup(function(d) { 
+                   return d3.sum(d, function(g) {return g.value })
+                  }).entries(datas)
+                  
+ data.forEach(function(d) {
+ d.Region = d.Region;
+ d.value = d.value;
+})
+
+
 function drawPieChart(){
     const good_datas = []
     let total = 0
-    for(let i = 0; i < datas.length; i++){
-        total = +datas[i].value + +total
+    for(let i = 0; i < datanew2.length; i++){
+        total = +datanew2[i].value + +total
     }
-    for(let i = 0; i < datas.length; i++){
+    for(let i = 0; i < datanew2.length; i++){
         good_datas.push(
             {
-                value : datas[i].value/total, 
+                value : datanew2[i].value/total, 
                 color : "#AA" + Math.ceil(Math.random() * 10000),
-                title : datas[i].Region
+                title : datanew2[i].Region
             })
     }
 
