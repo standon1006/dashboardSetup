@@ -16,8 +16,8 @@ body,html{
 }
 body{
     font-family: "montserrat",Arial, Helvetica, sans-serif;
-    background-color : #F0F8FF;
-    color : #F0F8FF;
+    background-color : #000;
+    color : #000;
 }
 .black-bg{
     background-color : var(--header-bg-color);
