@@ -2,13 +2,13 @@
 const datas = [
     { year : "2020", week : "34", Segment : "abc", Region : "India", value : 47 },
     { year : "2020", week : "35", Segment : "bcd", Region : "JAPAN", value : 81 },
-    { year : "2021", week : "36", Segment : "def", Region : "JAPAN" value : 33 },
-    { year : "2021", week : "37", Segment : "def", Region : "India" value : 54.21 },
-    { year : "2021", week : "38", Segment : "ijk", Region : "EMEA" value : 41.78 },
-    { year : "2019", week : "39", Segment : "sdf", Region : "America" value : 41.78 },
-    { year : "2018", week : "40", Segment : "sdf", Region : "JAPAN" value : 41.78 },
-    { year : "2019", week : "41", Segment : "abc", Region : "India" value : 41.78 },
-    { year : "2017", week : "42", Segment : "bcd", Region : "India" value : 41.78 },
+    { year : "2021", week : "36", Segment : "def", Region : "JAPAN", value : 33 },
+    { year : "2021", week : "37", Segment : "def", Region : "India", value : 54.21 },
+    { year : "2021", week : "38", Segment : "ijk", Region : "EMEA", value : 41.78 },
+    { year : "2019", week : "39", Segment : "sdf", Region : "America", value : 41.78 },
+    { year : "2018", week : "40", Segment : "sdf", Region : "JAPAN", value : 41.78 },
+    { year : "2019", week : "41", Segment : "abc", Region : "India", value : 41.78 },
+    { year : "2017", week : "42", Segment : "bcd", Region : "India", value : 41.78 },
 ]
 const area = document.querySelector("#bar")
 const body = document.querySelector('body')
