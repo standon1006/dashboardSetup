@@ -97,7 +97,7 @@ function drawBarChart(){
     //End y Axis Title
 
 
-    chart.selectAll()
+    chart.selectAll('rect')
     .data(datas)
     .enter()
         .append('rect')
@@ -113,7 +113,7 @@ function drawBarChart(){
             d3.select(this).attr('class','bar')
         })
     
-    chart.selectAll()
+    chart.selectAll('text')
     .data(datas)
     .enter()
         .append("text")
