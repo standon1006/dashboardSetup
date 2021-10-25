@@ -1,5 +1,5 @@
 :root{
-    --header-bg-color : #000;
+    --header-bg-color : #2596be;
     --main-bg-color : #F0F8FF;
     --block-bg-color : #2a2a2a;
     --highlight-color : #3862bb;
@@ -45,7 +45,7 @@ body{
     stroke: var(--text-color);
 }
 .title{
-    font-size: 10px;
+    font-size: 12px;
     text-anchor: middle;
     fill : #fff;
 }
