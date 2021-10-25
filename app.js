@@ -202,7 +202,7 @@ function drawPieChart(){
             {
                 value : datas[i].value/total, 
                 color : "#AA" + Math.ceil(Math.random() * 10000),
-                title : datas[i].region
+                title : datas[i].Segment
             })
     }
 
