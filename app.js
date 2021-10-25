@@ -199,8 +199,8 @@ drawPieChart()
                   }).entries(datas)
                   
  data.forEach(function(d) {
- d.Region = d.Region;
- d.value = d.value;
+ d.Region = d.key;
+ d.value = d.values;
 })
 
 
