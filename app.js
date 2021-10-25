@@ -158,7 +158,7 @@ function drawLineChart(){
     .attr('y', margin.y / 2)
     .attr('class','title')
     .attr('text-anchor','middle')
-    .text('Performance by Weeks')
+    .text('Performance in Weeks')
     //End Top Title
 
     //x Axis Title
@@ -225,7 +225,7 @@ function drawPieChart(){
     .attr('y', margin.y / 2)
     .attr('class','title')
     .attr('text-anchor','middle')
-    .text('Distribution by Region')
+    .text('Distribution by Segment')
     //End Top Title
 
     const radius = (width < height) ? width / 2 : height / 2;
