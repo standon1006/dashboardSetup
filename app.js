@@ -98,13 +98,13 @@ function drawBarChart(){
 
 
     chart.selectAll()
-    .data(datanew)
+    .data(datas)
     .enter()
         .append('rect')
         .attr('class','bar')
         .attr('x', (d) => xScale(d.year))
-        .attr('y', (d) => yScale(+d.value))
-        .attr('height', (d) => height - yScale(+d.value))
+        .attr('y', (d) => yScale(d.value))
+        .attr('height', (d) => height - yScale(d.value))
         .attr('width', xScale.bandwidth())
         .on('mouseenter', function(){
             d3.select(this).attr('class','hover-bar')
