@@ -17,7 +17,7 @@ body,html{
 body{
     font-family: "montserrat",Arial, Helvetica, sans-serif;
     background-color : #F0F8FF;
-    color : #808080;
+    color : #F0F8FF;
 }
 .black-bg{
     background-color : var(--header-bg-color);
