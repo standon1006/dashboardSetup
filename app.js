@@ -202,7 +202,7 @@ function drawPieChart(){
             {
                 value : datas[i].value/total, 
                 color : "#AA" + Math.ceil(Math.random() * 10000),
-                title : datas[i].segment
+                title : datas[i].region
             })
     }
 
@@ -225,7 +225,7 @@ function drawPieChart(){
     .attr('y', margin.y / 2)
     .attr('class','title')
     .attr('text-anchor','middle')
-    .text('Distribution by Segment')
+    .text('Distribution by Region')
     //End Top Title
 
     const radius = (width < height) ? width / 2 : height / 2;
