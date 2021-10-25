@@ -28,7 +28,71 @@ body.onresize = function(){
         pieSVG.remove()
         drawPieChart()
     }
+    const tableSVG =  document.querySelector('#svg-table')
+    if(tableSVG != null){
+        tableSVG.remove()
+        drawtable()
+    }
 }
+
+drawtable()
+function drawtable(){
+    
+    const area = document.querySelector('#table)
+    const   margin  = {y : 40, x : 60},
+    width   = area.offsetWidth - (2 * margin.x),
+    height  = area.offsetHeight - (2 * margin.y);
+    const svg = d3.select(area).append("svg")
+    svg.attr("width",width + (2 * margin.x))
+    .attr("height",height + (2 * margin.y))
+    .attr('id','svg-table')
+    const chart = svg.append('g')
+    .attr('transform',`translate(${margin.x},${margin.y})`)
+    
+          const sortAscending = true
+		  const table = d3.select('#page-wrap').append('table')
+		  const titles = d3.keys(data[0])
+		  const headers = table.append('thead').append('tr')
+		                   .selectAll('th')
+		                   .data(titles).enter()
+		                   .append('th')
+		                   .text(function (d) {
+			                    return d
+		                    })
+		                   .on('click', function (d) {
+		                	   headers.attr('class', 'header')
+		                	   
+		                	   if (sortAscending) {
+		                	     rows.sort(function(a, b) { return b[d] < a[d]; });
+		                	     sortAscending = false;
+		                	     this.className = 'aes'
+		                	   } else {
+		                		 rows.sort(function(a, b) { return b[d] > a[d]; });
+		                		 sortAscending = true;
+		                		 this.className = 'des'
+		                	   }
+		                	   
+		                   })
+		  
+		  const rows = table.append('tbody').selectAll('tr')
+		               .data(data).enter()
+		               .append('tr')
+		  rows.selectAll('td')
+		    .data(function (d) {
+		    	return titles.map(function (k) {
+		    		return { 'value': d[k], 'name': k};
+		    	})
+		    }).enter()
+		    .append('td')
+            .attr('class','table')
+		    .attr('data-th', function (d) {
+		    	return d.name;
+		    })
+		    .text(function (d) {
+		    	return d.value;
+		    })
+}
+
 drawBarChart()
 function drawBarChart(){
 
