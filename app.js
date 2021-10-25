@@ -112,22 +112,6 @@ function drawBarChart(){
         .on('mouseleave', function(){
             d3.select(this).attr('class','bar')
         })
-    
-    chart.selectAll()
-    .data(datas)
-    .enter()
-        .append("text")
-        .text(function(d) {
-            return d.value
-        })
-        .attr("y", function(d, i) {
-            return height - yScale(d.value) - 2
-        })
-        .attr("x", function(d, i) {
-            return xScale.bandwidth() * i
-        })
-        .attr("fill", "#A64C38")
-
 }
 
 drawLineChart()
